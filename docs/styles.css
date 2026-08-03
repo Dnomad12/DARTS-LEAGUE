@@ -1,0 +1,17 @@
+/* Simple styles for the OCR demo */
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;color:#111;background:#f7fafc}
+header{background:#111;color:#fff;padding:1rem}
+header h1{margin:0;font-size:1.25rem}
+header p{margin:.25rem 0 0;font-size:.9rem}
+main{padding:1rem;max-width:900px;margin:0 auto}
+.file-drop{display:flex;align-items:center;justify-content:center;border:2px dashed #cbd5e1;padding:1.5rem;border-radius:8px;cursor:pointer;background:#fff}
+.file-drop input{display:none}
+.muted{color:#718096;font-size:.9rem}
+#preview{margin-top:1rem}
+#ocrText{width:100%;font-family:monospace}
+#parseActions{margin:0.5rem 0}
+#parseBtn,#saveMatchBtn,#clearBtn,#recalcLb{padding:.5rem .75rem;margin-right:.5rem}
+#parsedTable{width:100%;border-collapse:collapse;margin-top:.5rem;background:#fff}
+#parsedTable th,#parsedTable td{border:1px solid #e2e8f0;padding:.5rem}
+#leaderboardWrap{margin-top:.5rem;background:#fff;padding:.5rem;border:1px solid #e2e8f0}
+footer{padding:1rem;text-align:center;font-size:.85rem;color:#4a5568}

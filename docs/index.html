@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Darts League — OCR Score Upload</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <h1>DARTS-LEAGUE — Upload & OCR</h1>
+    <p>Client-side OCR demo using Tesseract.js. Enable GitHub Pages for this repo (serve from <code>/docs</code>).</p>
+  </header>
+
+  <main>
+    <section id="upload">
+      <label class="file-drop" id="fileDrop">
+        <input type="file" id="fileInput" accept="image/*" />
+        <div>
+          <strong>Click or drop a screenshot</strong>
+          <div class="muted">Supported: PNG, JPG — OCR runs in your browser</div>
+        </div>
+      </label>
+    </section>
+
+    <section id="preview">
+      <h2>OCR Progress</h2>
+      <div id="progress">No image</div>
+      <canvas id="canvas" style="display:none"></canvas>
+      <div id="ocrResultWrap">
+        <h3>Raw OCR text</h3>
+        <textarea id="ocrText" rows="8"></textarea>
+      </div>
+
+      <div id="parseActions">
+        <button id="parseBtn">Parse Scores</button>
+        <button id="saveMatchBtn">Save Match</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+
+      <div id="parsed">
+        <h3>Parsed Match</h3>
+        <table id="parsedTable">
+          <thead><tr><th>Player</th><th>Score</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="leaderboard">
+      <h2>Leaderboard (Local)</h2>
+      <div id="leaderboardWrap"></div>
+      <button id="recalcLb">Recalculate Leaderboard</button>
+    </section>
+  </main>
+
+  <footer>
+    <small>GitHub Copilot Chat Assistant scaffold — client-side OCR. Improve parsing by providing screenshots.</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.3/dist/tesseract.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
