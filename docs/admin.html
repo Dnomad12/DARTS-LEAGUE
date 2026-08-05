@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Darts League — Admin OCR Uploader</title>
+  <link rel="stylesheet" href="/docs/styles.css">
+  <style>
+    .thumb { max-width:180px; max-height:120px; object-fit:contain; border:1px solid #ddd; margin:6px }
+    .grid{display:flex;flex-wrap:wrap;gap:8px}
+    .panel{padding:12px;border:1px solid #eee;border-radius:6px;margin-top:12px}
+    label{display:block;margin-top:6px}
+    input[type=password]{width:100%}
+    button{margin-top:8px}
+  </style>
+</head>
+<body>
+  <main style="max-width:1000px;margin:2rem auto;padding:0 1rem;">
+    <header>
+      <h1>Darts League — Admin OCR Uploader</h1>
+      <p class="small">Select an uploaded screenshot, run OCR locally in your browser, review parsed standings, then commit them back to this repo. This page does not store your token; you enter a temporary Personal Access Token to commit changes.</p>
+    </header>
+
+    <section class="panel">
+      <h2>Available uploads</h2>
+      <div id="uploads" class="grid">Loading…</div>
+    </section>
+
+    <section class="panel">
+      <h2>Selected image</h2>
+      <div id="selectedInfo">No image selected</div>
+      <div id="imageWrap"></div>
+      <div style="margin-top:8px">
+        <button id="runOcr" disabled>Run OCR on selected image</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>OCR result & parsed preview</h2>
+      <pre id="ocrRaw" style="white-space:pre-wrap;background:#f9f9f9;padding:8px;border-radius:4px;max-height:200px;overflow:auto">Raw OCR output will appear here</pre>
+      <div id="preview"></div>
+      <div style="margin-top:8px">
+        <label>Commit message (for GitHub):</label>
+        <input id="commitMsg" type="text" value="Update standings from OCR" />
+        <label>Temporary GitHub Personal Access Token (public_repo scope):</label>
+        <input id="token" type="password" placeholder="Paste a token with public_repo scope" />
+        <button id="commitBtn" disabled>Commit standings to repo</button>
+        <div id="commitStatus" class="small"></div>
+      </div>
+    </section>
+
+    <footer style="margin-top:18px" class="small">Note: For public repositories you can create a token with <code>public_repo</code> scope. The token is used only in your browser session to push the updated file.</footer>
+  </main>
+
+  <script src="https://unpkg.com/tesseract.js@2.1.5/dist/tesseract.min.js"></script>
+  <script src="/docs/assets/js/admin.js" type="module"></script>
+</body>
+</html>
