@@ -1,0 +1,8 @@
+{
+  "season": "2026",
+  "players": [
+    {"name":"Alice","matchesPlayed":8,"wins":6,"losses":2,"legsFor":48,"legsAgainst":30,"diff":18,"points":18},
+    {"name":"Bob","matchesPlayed":8,"wins":5,"losses":3,"legsFor":44,"legsAgainst":32,"diff":12,"points":15},
+    {"name":"Charlie","matchesPlayed":8,"wins":4,"losses":4,"legsFor":38,"legsAgainst":40,"diff":-2,"points":12}
+  ]
+}
