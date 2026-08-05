@@ -1,0 +1,4 @@
+Trigger OCR run
+
+This file was created to trigger the OCR GitHub Action on existing uploads.
+Timestamp: 2026-08-05T09:33:00Z
